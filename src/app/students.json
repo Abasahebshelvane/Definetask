@@ -1,0 +1,34 @@
+[
+    {
+      "id": 1,
+      "name": "Hardik",
+      "address": "SATARA",
+      "contact": 123456788
+    },
+    {
+        "id": 1,
+        "name": "Hardik",
+        "address": "OSMANABAD",
+        "contact": 5689785
+      },
+      {
+        "id": 1,
+        "name": "Hardik",
+        "address": "PUNE",
+        "contact": 8888888888
+      },
+      {
+        "id": 1,
+        "name": "Hardik",
+        "address": "CHINCHWAD",
+        "contact": 555555555555
+      },
+      {
+        "id": 1,
+        "name": "Hardik",
+        "address": "BHOOM",
+        "contact": 2568899788
+      }
+    ]
+   
+    

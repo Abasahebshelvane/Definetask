@@ -1,0 +1,63 @@
+
+         
+  <mat-table #table [dataSource]="dataSource">
+
+   
+
+    <ng-container matColumnDef="select">
+            <mat-header-cell *matHeaderCellDef>
+              <mat-checkbox (change)="$event ? masterToggle() : null"
+                            [checked]="selection.hasValue() && isAllSelected()"
+                            [indeterminate]="selection.hasValue() && !isAllSelected()">
+              </mat-checkbox>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <mat-checkbox (click)="$event.stopPropagation()"
+                            (change)="$event ? selection.toggle(row) : null"
+                            [checked]="selection.isSelected(row)">
+              </mat-checkbox>
+            </mat-cell>
+          </ng-container>
+
+
+
+<!-- id Column -->
+<ng-container matColumnDef="id">
+  <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+  <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+</ng-container> 
+
+<!-- Name Column -->
+<ng-container matColumnDef="name">
+  <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+  <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+</ng-container>
+
+<!-- Contact Column -->
+<ng-container matColumnDef="contact">
+  <mat-header-cell *matHeaderCellDef> Contact </mat-header-cell>
+  <mat-cell *matCellDef="let element"> {{element.contact}} </mat-cell>
+</ng-container>
+
+<!-- address Column -->
+<ng-container matColumnDef="address">
+  <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+  <mat-cell *matCellDef="let element"> {{element.address}} </mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+        <mat-cell *matCellDef="let element">  
+        <button mat-raised-button color="primary" (click)="removeSelectedRows()"> Remove</button> 
+      
+    </mat-cell>
+      </ng-container>
+
+<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+<mat-row *matRowDef="let row; columns: displayedColumns;"  (click)="row.highlighted = !row.highlighted" (mouseover)="row.hovered = true" (mouseout)="row.hovered = false"></mat-row>
+</mat-table>
+
+
+
+
+
